@@ -22,7 +22,7 @@ for filename in os.listdir('oriented_files'):
             # Set the CRS of the dataset
             dataset.SetProjection(crs.ExportToWkt())
         
-        os.remove(os.path.join("pgws", file_name))
+        # os.remove(os.path.join("pgws", file_name))
 
     except FileNotFoundError as e:
         print("skipping: " + file_name)

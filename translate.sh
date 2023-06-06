@@ -16,8 +16,8 @@ for auxfile in "$directory"/*.tif.aux.xml; do
     gdal_translate -mo "$auxfile" "$tif_file" "$new_tif_file"
 
     # free up some space
-    rm $auxfile
-    rm $tif_file
+    # rm $auxfile
+    # rm $tif_file
 
     # Optional: Print a message for each processed file
     echo "Translated $auxfile to $new_tif_file"
