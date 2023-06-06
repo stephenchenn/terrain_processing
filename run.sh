@@ -23,4 +23,4 @@ chmod +x translate.sh
 ./translate.sh
 
 # compress result
-zip -r processed_terrains.zip geotransformed_files/
+zip -r processed.zip geotransformed_files/

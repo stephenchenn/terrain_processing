@@ -2,7 +2,8 @@ from osgeo import gdal, osr
 import os
 
 for filename in os.listdir('oriented_files'):
-    dataset = gdal.Open(os.path.join("oriented_files", filename), gdal.GA_Update)
+    # , gdal.GA_Update
+    dataset = gdal.Open(os.path.join("oriented_files", filename))
 
     tileindex = (filename.split("-")[-1]).split(".")[-2]
 
