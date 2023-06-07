@@ -19,3 +19,7 @@ sudo apt install python3-pip -y
 pip install google.cloud
 # Install Google Cloud Storage library
 pip install google-cloud-storage
+
+# Install zip
+sudo apt-get update
+sudo apt-get install zip
