@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # prepare directories
-mkdir -p pgws oriented_files geotransformed_files error_logs raw_files
+mkdir -p pgws oriented_files error_logs raw_files
 
 # fetch terrain files
 python3 fetch_terrain.py
@@ -18,9 +18,5 @@ python3 fix_scaling.py
 # generate tif.aux.xml files from pgws
 python3 geotransform_terrain.py
 
-# adding tif.aux.xml into tif files
-chmod +x translate.sh
-./translate.sh
-
 # compress result
-zip -r processed.zip geotransformed_files/
+zip -r processed.zip oriented_files/

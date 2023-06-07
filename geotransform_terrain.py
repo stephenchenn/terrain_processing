@@ -2,8 +2,7 @@ from osgeo import gdal, osr
 import os
 
 for filename in os.listdir('oriented_files'):
-    # , gdal.GA_Update
-    dataset = gdal.Open(os.path.join("oriented_files", filename))
+    dataset = gdal.Open(os.path.join("oriented_files", filename), gdal.GA_Update)
 
     tileindex = (filename.split("-")[-1]).split(".")[-2]
 
@@ -23,7 +22,10 @@ for filename in os.listdir('oriented_files'):
             # Set the CRS of the dataset
             dataset.SetProjection(crs.ExportToWkt())
         
-        # os.remove(os.path.join("pgws", file_name))
+        os.remove(os.path.join("pgws", file_name))
 
     except FileNotFoundError as e:
         print("skipping: " + file_name)
+
+    dataset.FlushCache()
+    dataset = None

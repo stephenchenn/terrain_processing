@@ -27,3 +27,4 @@ for filename in os.listdir('oriented_files'):
     except NotFound:
         logging.error("File not found: %s", file_name)
         os.remove(des_file)
+        os.remove(os.path.join("oriented_files",filename))

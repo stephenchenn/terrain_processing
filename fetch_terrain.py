@@ -14,8 +14,6 @@ directory_path = "TasNetworksProcessedFiles/DEM/DTM"
 bucket = client.get_bucket(bucket_name)
 blobs = bucket.list_blobs(prefix=directory_path)
 
-count=0
-
 # create folder
 folder_name = 'raw_files'
 if not os.path.exists(folder_name):
@@ -33,7 +31,3 @@ for blob in blobs:
         blob.download_to_file(file_obj)
 
     print(os.path.basename(blob.name) + ' downloaded successfully.')
-
-    count += 1
-    if count > 10:
-        break
