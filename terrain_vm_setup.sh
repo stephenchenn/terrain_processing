@@ -22,4 +22,4 @@ pip install google-cloud-storage
 
 # Install zip
 sudo apt-get update
-sudo apt-get install zip
+sudo apt-get install zip -y
