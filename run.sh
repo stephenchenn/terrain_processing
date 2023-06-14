@@ -4,7 +4,7 @@
 mkdir -p pgws oriented_files raw_files
 
 # fetch terrain files
-python3 fetch_terrain.py
+python3 test_fetch.py
 
 # fix orientation (rotate by 90 degrees clockwise and flip horizontally)
 python3 rotate.py
