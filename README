@@ -1,0 +1,4 @@
+1. create vm (highmem, 600 boot disk, aus-southeast1-b(preferred))
+2. upload terrain_vm_setup.sh and run
+3. gcloud init and gcloud auth application-default login
+4. run run.sh
